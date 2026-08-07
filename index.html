@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing e SEO Local em Luís Eduardo Magalhães | Capela Serviço Digital</title>
+<meta name="description" content="Aumente as vendas da sua empresa em Luís Eduardo Magalhães com SEO Local, Otimização no Google Meu Negócio, Sites e Tour Virtual 360°. Fale conosco!">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0a0a0a; --bg2:#111111; --bg3:#161616; --white:#ffffff; --gray:#888888; --gray2:#444444; --accent:#c8a84b; --accent2:#e8c96d; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--bg); color:var(--white); font-family:'Outfit',sans-serif; overflow-x:hidden; }
+
+  /* NAVBAR */
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:16px 48px; background:rgba(10,10,10,0.92); backdrop-filter:blur(12px); border-bottom:1px solid rgba(200,168,75,0.1); transition:all 0.3s; }
+  .nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .logo-capela {
+    font-size: 30px; /* CAPELA maior */
+    letter-spacing: 4px;
+    line-height: 1;
+    
+    color: var(--white);
+  }
+
+  .logo-sub {
+    font-size: 14px; /* SERVIÇO DIGITAL bem menor */
+    letter-spacing: 1.4px;
+    font-weight: 400;
+    
+    color: var(--white);
+    line-height: 0,1;
+  }
+  .nav-links { display:flex; gap:24px; list-style:none; }
+  .nav-links a { text-decoration:none; color:var(--gray); font-size:11px; font-weight:500; letter-spacing:1px; text-transform:uppercase; transition:color 0.3s; position:relative; }
+  .nav-links a::after { content:''; position:absolute; bottom:-4px; left:0; width:0; height:1px; background:var(--accent); transition:width 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color:var(--white); }
+  .nav-links a:hover::after { width:100%; }
+  .nav-toggle { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
+  .nav-toggle span { display:block; width:24px; height:2px; background:var(--white); }
+
+  /* HERO */
+  #inicio { min-height:100vh; display:flex; align-items:center; position:relative; overflow:hidden; padding:0 48px; padding-top:80px; background-image:url('0_Inicio.jpg'); background-size:cover; background-position:center right; background-repeat:no-repeat; }
+  .hero-bg { position:absolute; inset:0; background:linear-gradient(to right,rgba(10,10,10,0.97) 40%,rgba(10,10,10,0.5) 70%,rgba(10,10,10,0.2) 100%); }
+  .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(200,168,75,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(200,168,75,0.02) 1px,transparent 1px); background-size:60px 60px; }
+  .hero-content { position:relative; z-index:2; max-width:680px; }
+  .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(200,168,75,0.1); border:1px solid rgba(200,168,75,0.3); padding:6px 16px; border-radius:100px; font-size:12px; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:var(--accent2); margin-bottom:32px; animation:fadeUp 0.8s ease both; }
+  .hero-badge::before { content:''; width:6px; height:6px; background:var(--accent); border-radius:50%; animation:pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)} }
+  .hero-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(48px,7vw,100px); line-height:0.95; letter-spacing:2px; margin-bottom:24px; animation:fadeUp 0.8s 0.15s ease both; }
+  .hero-title .line2 { color:var(--accent); }
+  .hero-subtitle { font-size:16px; font-weight:300; color:var(--white); line-height:1.7; max-width:520px; margin-bottom:44px; animation:fadeUp 0.8s 0.3s ease both; }
+  .hero-ctas { display:flex; gap:16px; flex-wrap:wrap; animation:fadeUp 0.8s 0.45s ease both; }
+
+  /* BUTTONS */
+  .btn-primary { display:inline-flex; align-items:center; gap:10px; background:var(--accent); color:#000; font-weight:700; font-size:13px; letter-spacing:1px; text-transform:uppercase; padding:14px 28px; border-radius:4px; text-decoration:none; transition:all 0.3s; border:none; cursor:pointer; }
+  .btn-primary:hover { background:var(--accent2); transform:translateY(-2px); box-shadow:0 12px 40px rgba(200,168,75,0.3); }
+  .btn-secondary { display:inline-flex; align-items:center; gap:10px; border:1px solid var(--gray2); color:var(--white); font-weight:500; font-size:13px; letter-spacing:1px; text-transform:uppercase; padding:14px 28px; border-radius:4px; text-decoration:none; transition:all 0.3s; }
+  .btn-secondary:hover { border-color:var(--accent); color:var(--accent); transform:translateY(-2px); }
+
+  /* STATS */
+  .stats-bar { background:var(--bg2); border-top:1px solid rgba(200,168,75,0.1); border-bottom:1px solid rgba(200,168,75,0.1); padding:40px 48px; display:grid; grid-template-columns:repeat(3,1fr); }
+  .stat-item { text-align:center; padding:20px; border-right:1px solid rgba(255,255,255,0.06); }
+  .stat-item:last-child { border-right:none; }
+  .stat-number { font-family:'Bebas Neue',sans-serif; font-size:52px; color:var(--accent); line-height:1; margin-bottom:6px; }
+  .stat-label { font-size:12px; color:var(--gray); text-transform:uppercase; letter-spacing:2px; font-weight:500; }
+
+  /* COMMON */
+  section { padding:100px 48px; }
+  .section-tag { display:inline-block; font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:16px; border-left:2px solid var(--accent); padding-left:12px; }
+  .section-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(36px,5vw,64px); line-height:1.05; letter-spacing:1px; margin-bottom:16px; }
+  .section-sub { font-size:15px; color:var(--gray); line-height:1.7; max-width:560px; }
+
+  /* SOBRE */
+  #sobre { background:var(--bg3); }
+  .sobre-layout { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; margin-top:60px; }
+  .sobre-img { border-radius:8px; overflow:hidden; aspect-ratio:4/3; position:relative; }
+  .sobre-img img { width:100%; height:100%; object-fit:cover; display:block; }
+  .sobre-img::after { content:''; position:absolute; inset:0; border:1px solid rgba(200,168,75,0.2); border-radius:8px; pointer-events:none; }
+  .sobre-text h2 { font-family:'Bebas Neue',sans-serif; font-size:clamp(28px,3.5vw,42px); line-height:1.1; margin-bottom:20px; }
+
+  /* SERVIÇOS */
+  #servicos { background:var(--bg2); }
+  .services-layout { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; margin-top:60px; }
+  .services-img { border-radius:8px; overflow:hidden; position:relative; aspect-ratio:4/3; position:sticky; top:100px; }
+  .services-img img { width:100%; height:100%; object-fit:cover; display:block; }
+  .services-img::after { content:''; position:absolute; inset:0; border:1px solid rgba(200,168,75,0.2); border-radius:8px; pointer-events:none; }
+  .services-list { display:flex; flex-direction:column; gap:24px; }
+  .service-item { display:flex; gap:20px; align-items:flex-start; padding-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.05); transition:all 0.3s; }
+  .service-item:last-child { border-bottom:none; padding-bottom:0; }
+  .service-item:hover .service-num { color:var(--accent); }
+  .service-num { font-family:'Bebas Neue',sans-serif; font-size:36px; color:var(--gray2); line-height:1; min-width:48px; transition:color 0.3s; }
+  .service-info h3 { font-size:16px; font-weight:700; margin-bottom:6px; }
+  .service-info p { font-size:13px; color:var(--gray); line-height:1.7; }
+
+  /* SEO LOCAL */
+  #seo-local { background:var(--bg); }
+  .seo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:60px; }
+  .seo-card { background:var(--bg3); border:1px solid rgba(255,255,255,0.05); border-radius:8px; padding:36px 28px; transition:all 0.3s; }
+  .seo-card:hover { border-color:rgba(200,168,75,0.3); transform:translateY(-4px); }
+  .seo-icon { font-size:40px; margin-bottom:20px; display:block; }
+  .seo-card h3 { font-size:17px; font-weight:700; margin-bottom:12px; }
+  .seo-card p { font-size:14px; color:var(--gray); line-height:1.7; }
+
+  /* DEPOIMENTOS */
+  #depoimentos { background:var(--bg2); }
+  .depoimentos-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:60px; }
+  .depoimento-card { background:var(--bg3); border:1px solid rgba(255,255,255,0.05); border-radius:8px; padding:32px; transition:all 0.3s; }
+  .depoimento-card:hover { border-color:rgba(200,168,75,0.2); }
+  .depoimento-stars { color:var(--accent); font-size:18px; margin-bottom:16px; letter-spacing:2px; }
+  .depoimento-text { font-size:14px; color:var(--gray); line-height:1.8; margin-bottom:24px; font-style:italic; }
+  .depoimento-autor { display:flex; align-items:center; gap:12px; }
+  .depoimento-avatar { width:44px; height:44px; border-radius:50%; background:rgba(200,168,75,0.2); border:2px solid rgba(200,168,75,0.3); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .depoimento-nome { font-size:14px; font-weight:700; }
+  .depoimento-empresa { font-size:12px; color:var(--accent); }
+
+  /* FAQ */
+  #faq { background:var(--bg); }
+  .faq-layout { display:grid; grid-template-columns:1fr 1fr; gap:80px; margin-top:60px; }
+  .faq-list { display:flex; flex-direction:column; gap:4px; }
+  .faq-item { border:1px solid rgba(255,255,255,0.06); border-radius:6px; overflow:hidden; }
+  .faq-question { padding:20px 24px; font-size:15px; font-weight:600; cursor:pointer; display:flex; justify-content:space-between; align-items:center; transition:background 0.3s; user-select:none; }
+  .faq-question:hover { background:rgba(200,168,75,0.05); }
+  .faq-question.open { color:var(--accent); background:rgba(200,168,75,0.05); }
+  .faq-arrow { font-size:20px; transition:transform 0.3s; color:var(--accent); }
+  .faq-question.open .faq-arrow { transform:rotate(45deg); }
+  .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.4s ease,padding 0.3s; font-size:14px; color:var(--gray); line-height:1.7; }
+  .faq-answer.open { max-height:200px; padding:0 24px 20px; }
+  .faq-cta { background:var(--bg3); border:1px solid rgba(200,168,75,0.15); border-radius:8px; padding:40px; display:flex; flex-direction:column; gap:16px; align-items:flex-start; justify-content:center; }
+  .faq-cta h3 { font-family:'Bebas Neue',sans-serif; font-size:36px; line-height:1.1; }
+  .faq-cta p { font-size:14px; color:var(--gray); line-height:1.7; }
+
+  /* ANÁLISE */
+  #analise { background:var(--bg3); }
+  .analise-layout { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; margin-top:60px; }
+  .analise-benefits { display:flex; flex-direction:column; gap:12px; margin-top:24px; }
+  .analise-benefit { display:flex; align-items:center; gap:12px; font-size:14px; color:var(--gray); }
+  .analise-check { color:var(--accent); font-size:16px; font-weight:700; flex-shrink:0; }
+  .analise-form { background:var(--bg2); border:1px solid rgba(200,168,75,0.15); border-radius:8px; padding:40px; }
+  .analise-form h3 { font-family:'Bebas Neue',sans-serif; font-size:28px; margin-bottom:8px; }
+  .analise-form p { font-size:13px; color:var(--gray); margin-bottom:28px; }
+  .form-group { display:flex; flex-direction:column; gap:8px; margin-bottom:16px; }
+  .form-group label { font-size:11px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--gray); }
+  .form-group input, .form-group textarea, .form-group select { background:var(--bg3); border:1px solid rgba(255,255,255,0.08); border-radius:4px; padding:12px 16px; color:var(--white); font-family:'Outfit',sans-serif; font-size:14px; outline:none; transition:border-color 0.3s; width:100%; }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color:rgba(200,168,75,0.5); }
+  .form-group textarea { resize:vertical; min-height:100px; }
+  .form-group select option { background:var(--bg2); color:var(--white); }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+
+  /* ORÇAMENTO */
+  #orcamento { background:var(--bg2); }
+
+  /* CONTATO */
+  #contato { background:var(--bg); }
+  .contact-layout { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; margin-top:60px; }
+  .contact-img { border-radius:8px; overflow:hidden; aspect-ratio:4/3; position:relative; border:1px solid rgba(200,168,75,0.15); }
+  .contact-img img { width:100%; height:100%; object-fit:cover; display:block; }
+  .contact-info { display:flex; flex-direction:column; gap:36px; padding-top:8px; }
+  .contact-block h3 { font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+  .contact-block a, .contact-block p { font-size:16px; color:var(--white); text-decoration:none; line-height:1.5; transition:color 0.3s; display:block; }
+  .contact-block a:hover { color:var(--accent); }
+  
+
+.whatsapp-btn {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: #25D366;
+  color: #fff !important;
+  padding: 16px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+   line-height: 1;
+}
+
+.whatsapp-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: white !important;
+  display: block;
+    transform: translateY(1px);
+
+}
+
+.whatsapp-text {
+  display: block;
+  line-height: 1;
+}
+
+.whatsapp-btn:hover {
+  background: #20bd5a;
+  color: #fff !important;
+}
+.whatsapp-btn:hover svg {
+  fill: white !important;
+}
+
+  /* FOOTER */
+  footer { background:var(--bg2); border-top:1px solid rgba(255,255,255,0.06); padding:40px 48px; }
+  .footer-inner {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  .footer-logo {
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+
+  /* Faz o rodapé usar exatamente o mesmo estilo do cabeçalho */
+  .footer-logo .nav-logo-text {
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    line-height:1;
+  }
+
+  .footer-logo .logo-capela {
+    font-size: 30px;
+    letter-spacing: 4px;
+    line-height: 1;
+    color: var(--white);
+  }
+
+  .footer-logo .logo-sub {
+    font-size: 14px;
+    letter-spacing: 1.4px;
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1;
+    margin-top: -2px;
+  }
+  .footer-social { display:flex; gap:16px; }
+  .footer-social a { width:40px; height:40px; border:1px solid rgba(255,255,255,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:16px; text-decoration:none; transition:all 0.3s; }
+  .footer-social a:hover { border-color:var(--accent); transform:translateY(-2px); }
+  .footer-copy { font-size:12px; color:var(--gray2); letter-spacing:1px; text-align:center; }
+  @media (max-width: 768px) {
+    .footer-social, .social-icons, .social-links {
+      margin-bottom: 20px !important;
+      padding-bottom: 8px !important;
+    }
+
+    .footer-copy, .copyright, p {
+      margin-top: 12px !important;
+      line-height: 1.6 !important;
+      padding-top: 8px !important;
+    }
+
+    /* seu rodapé inteiro ganha um respiro */
+    footer {
+      padding-bottom: 30px !important;
+    }
+  }
+  /* WHATSAPP FLOAT */
+  .whatsapp-float { position:fixed; bottom:110px; right:28px; z-index:999; width:56px; height:56px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:26px; text-decoration:none; box-shadow:0 8px 24px rgba(37,211,102,0.4); transition:all 0.3s; animation:bounceIn 1s 1s ease both; }
+  @media (max-width: 768px) {
+    .whatsapp-float {
+      bottom: 20px !important; /* aqui você escolhe: 20px, 28px */
+      right: 20px !important;
+    }
+  }
+  .whatsapp-float:hover { transform:scale(1.1); box-shadow:0 12px 32px rgba(37,211,102,0.5); }
+  @keyframes bounceIn { from{opacity:0;transform:scale(0.5)} to{opacity:1;transform:scale(1)} }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+  .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease,transform 0.7s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  /* MOBILE */
+  @media (max-width:900px) {
+    nav { padding:16px 24px; }
+    .nav-toggle { display:flex; }
+    .nav-links { display:none; position:absolute; top:100%; left:0; right:0; background:rgba(10,10,10,0.97); flex-direction:column; gap:0; padding:16px 0; border-bottom:1px solid rgba(200,168,75,0.1); }
+    .nav-links.open { display:flex; }
+    .nav-links li a { display:block; padding:14px 24px; font-size:14px; }
+    section { padding:70px 24px; }
+    #inicio { padding:100px 24px 60px; }
+    .stats-bar { padding:30px 24px; grid-template-columns:1fr; }
+    .stat-item { border-right:none; border-bottom:1px solid rgba(255,255,255,0.06); }
+    .stat-item:last-child { border-bottom:none; }
+    footer { padding:24px; }
+    .footer-inner { flex-direction:column; gap:20px; }
+    .sobre-layout,.services-layout,.contact-layout,.faq-layout,.analise-layout { grid-template-columns:1fr; gap:40px; }
+    .seo-grid,.depoimentos-grid { grid-template-columns:1fr; }
+    .form-row { grid-template-columns:1fr; }
+    .services-img { position:relative; top:0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5577998226795" class="whatsapp-float" target="_blank" title="WhatsApp"><svg viewBox="0 0 24 24" style="width:30px;height:30px;fill:white;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#inicio" class="nav-logo">
+    <img src="Logo_Capela_Branco.png" alt="Logo Capela Serviço Digital" style="height:44px;width:44px;object-fit:contain;">
+    <div class="nav-logo-text">
+      <span class="logo-capela">CAPELA</span><br>
+      <span class="logo-sub">SERVIÇO DIGITAL</span>
+    </div>
+  </a>
+  <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#inicio" class="active">Início</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#depoimentos">Depoimentos</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#analise">Análise Grátis</a></li>
+    <li><a href="#orcamento">Orçamento</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Agência de SEO Local em LEM</div>
+    <h1 class="hero-title">DESTAQUE SUA<br>EMPRESA NO<br><span class="line2">GOOGLE EM LEM</span></h1>
+    <p class="hero-subtitle">Conectamos seu negócio aos clientes da região de Luís Eduardo Magalhães que procuram exatamente pelo que você oferece. Otimização de perfil no Google, SEO Local, Tour 360° e Criação de Sites Profissionais.</p>
+    <div class="hero-ctas">
+      <a href="#analise" class="btn-primary">Solicitar Análise Grátis</a>
+      <a href="#servicos" class="btn-secondary">Ver Nossos Serviços</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item reveal"><div class="stat-number">+50</div><div class="stat-label">Clientes Atendidos</div></div>
+  <div class="stat-item reveal"><div class="stat-number">360°</div><div class="stat-label">Tour Virtual Imersivo</div></div>
+  <div class="stat-item reveal"><div class="stat-number">100%</div><div class="stat-label">Satisfação Garantida</div></div>
+</div>
+
+<!-- SOBRE NÓS -->
+<section id="sobre">
+  <div class="section-tag">Quem somos</div>
+  <div class="sobre-layout">
+    <div class="sobre-img reveal"><img src="1.jpg" alt="Google Meu Negócio - Capela Serviço Digital"></div>
+    <div class="sobre-text reveal">
+      <h2>Especialista em Presença Digital para Negócios de Luís Eduardo Magalhães e Região Oeste</h2>
+      <p class="section-sub" style="margin-bottom:16px;">Luís Eduardo Magalhães é uma das cidades que mais crescem na Bahia e no Brasil. Com um mercado dinâmico e altamente competitivo, ter uma presença online profissional não é mais um diferencial, mas uma necessidade.</p>
+      <p class="section-sub" style="margin-bottom:28px;">Ajudamos empresas locais (do agronegócio ao comércio e prestadores de serviços) a dominarem as primeiras posições do Google, gerando mais chamadas, visitas presenciais e vendas diariamente.</p>
+      <a href="https://wa.me/5577998226795?text=Ol%C3%A1%2C%20encontrei%20seu%20contato%20no%20site%20e%20gostaria%20de%20saber%20mais." class="btn-primary">Falar com um especialista →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos">
+  <div class="section-tag">O que fazemos</div>
+  <h2 class="section-title reveal">NOSSOS SERVIÇOS</h2>
+  <div class="services-layout">
+    <div class="services-img reveal"><img src="2.jpg" alt="Serviços - Google Meu Negócio em LEM"></div>
+    <div class="services-list">
+      <div class="service-item reveal"><div class="service-num">01</div><div class="service-info"><h3>Criação de Perfil de Empresa no Google</h3><p>Criamos e configuramos o perfil completo da sua empresa no Google. Definimos categorias certas, endereço exato, horários e uma descrição estratégica para o seu negócio ser encontrado imediatamente.</p></div></div>
+      <div class="service-item reveal"><div class="service-num">02</div><div class="service-info"><h3>Otimização de Perfil de Empresa no Google</h3><p>Transformamos seu perfil em um ímã de clientes. Ajustamos palavras-chave estratégicas para a região, adicionamos serviços, catálogo de produtos e otimização focada em buscas locais.</p></div></div>
+      <div class="service-item reveal"><div class="service-num">03</div><div class="service-info"><h3>SEO Local</h3><p>Posicionamos seu site e perfil nas primeiras colocações das pesquisas orgânicas e no mapa do Google quando clientes da região buscarem pelos seus produtos ou serviços.</p></div></div>
+      <div class="service-item reveal"><div class="service-num">04</div><div class="service-info"><h3>Tour Virtual 360°</h3><p>Permita que seus clientes explorem a estrutura da sua empresa, loja ou showroom com uma experiência imersiva em 360 graus. Mais credibilidade e transparência para o seu negócio.</p></div></div>
+      <div class="service-item reveal"><div class="service-num">05</div><div class="service-info"><h3>Criação de Sites Otimizados</h3><p>Desenvolvemos sites profissionais, extremamente rápidos e adaptados para celulares. Do design à publicação, seu site estará pronto para converter visitantes em clientes reais.</p></div></div>
+      <div class="service-item reveal"><div class="service-num">06</div><div class="service-info"><h3>Gestão de Reputação e Avaliações</h3><p>Estratégias para atrair mais avaliações 5 estrelas no Google e gestão de respostas para construir autoridade máxima e confiança no mercado local.</p></div></div>
+      <div class="service-item reveal"><div class="service-num">07</div><div class="service-info"><h3>Cartão de Visitas Digital</h3><p>Compartilhe contatos, localização, redes sociais e catálogo de forma moderna, interativa e ecológica, diretamente no celular do seu cliente.</p></div></div>
+      <div class="service-item reveal"><div class="service-num">08</div><div class="service-info"><h3>Monitoramento e Relatórios de Desempenho Local</h3><p>Acompanhe os resultados reais do seu investimento: relatórios periódicos de ligações recebidas, rotas traçadas no GPS e pesquisas pela sua marca no Google.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE SEO LOCAL EM LEM -->
+<section id="seo-local">
+  <div class="section-tag">Por que investir</div>
+  <h2 class="section-title reveal">POR QUE INVESTIR EM SEO LOCAL<br>EM LUÍS EDUARDO MAGALHÃES?</h2>
+  <div class="seo-grid">
+    <div class="seo-card reveal">
+      <span class="seo-icon">📍</span>
+      <h3>Conecte-se com o Cliente Certo</h3>
+      <p>Mais de 80% das buscas no Google em LEM têm intenção local — "empresas perto de mim", "serviços em LEM". Seu negócio precisa estar onde o cliente está procurando.</p>
+    </div>
+    <div class="seo-card reveal">
+      <span class="seo-icon">🚜</span>
+      <h3>Alcance a Região do Oeste Baiano</h3>
+      <p>Destaque-se não apenas em LEM, mas alcance clientes em Barreiras e cidades vizinhas. Amplie sua área de atuação sem aumentar seus custos com publicidade.</p>
+    </div>
+    <div class="seo-card reveal">
+      <span class="seo-icon">📈</span>
+      <h3>Resultados Recorrentes</h3>
+      <p>O SEO Local trabalha para você 24 horas por dia, 7 dias por semana, sem dependência constante de anúncios pagos. Invista uma vez e colha resultados duradouros.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="depoimentos">
+  <div class="section-tag">O que dizem sobre nós</div>
+  <h2 class="section-title reveal">DEPOIMENTOS</h2>
+  <div class="depoimentos-grid">
+    <div class="depoimento-card reveal">
+      <div class="depoimento-stars">★★★★★</div>
+      <p class="depoimento-text">"Excelente atendimento: rapidez; clareza nas explicações dos serviços prestados; polidez na comunicação e profissionalismo gerencial. Parabéns!"</p>
+      <div class="depoimento-autor"><div class="depoimento-avatar">👩</div><div><div class="depoimento-nome">Jákina</div><div class="depoimento-empresa">Cimentão</div></div></div>
+    </div>
+    <div class="depoimento-card reveal">
+      <div class="depoimento-stars">★★★★★</div>
+      <p class="depoimento-text">"Empresa seria com o cliente. Parabéns!!!"</p>
+      <div class="depoimento-autor"><div class="depoimento-avatar">👨</div><div><div class="depoimento-nome">Joao Malaquias</div><div class="depoimento-empresa">UP! Fit - Roupa Fitness</div></div></div>
+    </div>
+    <div class="depoimento-card reveal">
+      <div class="depoimento-stars">★★★★★</div>
+      <p class="depoimento-text">"Ótimo atendimento. Está de parabéns 🙏🙏"</p>
+      <div class="depoimento-autor"><div class="depoimento-avatar">👩</div><div><div class="depoimento-nome">Sara</div><div class="depoimento-empresa">Empório Tempero & Cia</div></div></div>
+    </div>
+    <div class="depoimento-card reveal">
+      <div class="depoimento-stars">★★★★★</div>
+      <p class="depoimento-text">"Excelente, muito profissionalismo e atendimento muito rápido, sem falar na cordialidade, parabéns."</p>
+      <div class="depoimento-autor"><div class="depoimento-avatar">👨</div><div><div class="depoimento-nome">Rafael</div><div class="depoimento-empresa">Real Calçados</div></div></div>
+    </div>
+    <div class="depoimento-card reveal">
+      <div class="depoimento-stars">★★★★★</div>
+      <p class="depoimento-text">"Excelente trabalho! Super indico. Fez da minha loja e amei 🥰"</p>
+      <div class="depoimento-autor"><div class="depoimento-avatar">👩</div><div><div class="depoimento-nome">Micaela</div><div class="depoimento-empresa">Pitucha Fashion - Moda Fitness</div></div></div>
+    </div>
+    <div class="depoimento-card reveal">
+      <div class="depoimento-stars">★★★★★</div>
+      <p class="depoimento-text">"Excelente trabalho, rapidez e empatia, serviço humano"</p>
+      <div class="depoimento-autor"><div class="depoimento-avatar">👩</div><div><div class="depoimento-nome">Izadora</div><div class="depoimento-empresa">BSB Celular</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-tag">Dúvidas frequentes</div>
+  <h2 class="section-title reveal">PERGUNTAS FREQUENTES</h2>
+  <div class="faq-layout">
+    <div class="faq-list reveal">
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">O que é SEO Local? <span class="faq-arrow">+</span></div><div class="faq-answer">SEO Local é um conjunto de estratégias para fazer seu negócio aparecer nos primeiros resultados do Google quando pessoas da sua região pesquisam pelos seus produtos ou serviços.</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Google Meu Negócio realmente gera clientes? <span class="faq-arrow">+</span></div><div class="faq-answer">Sim! Um perfil bem otimizado no Google Meu Negócio aparece nas pesquisas locais e no Google Maps, sendo uma das formas mais eficientes de atrair clientes que já estão procurando pelo que você oferece.</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">O que é Tour Virtual 360°? <span class="faq-arrow">+</span></div><div class="faq-answer">É uma experiência interativa onde o visitante pode navegar pelo seu espaço físico de forma virtual, visualizando todos os ambientes em 360 graus como se estivesse presencialmente no local.</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Quanto tempo leva para ficar pronto? <span class="faq-arrow">+</span></div><div class="faq-answer">Depende do serviço. A otimização do Google Meu Negócio é feita em até 48h. Um Tour Virtual leva de 3 a 7 dias. Um site pode levar de 7 a 15 dias dependendo da complexidade.</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Vocês atendem fora de Luís Eduardo Magalhães? <span class="faq-arrow">+</span></div><div class="faq-answer">Sim! Atendemos todo o Oeste da Bahia e também realizamos serviços remotos para clientes de qualquer região do Brasil.</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Em quanto tempo aparecem os resultados? <span class="faq-arrow">+</span></div><div class="faq-answer">Com o perfil bem configurado, as primeiras otimizações começam a surtir efeito em poucos dias, com consolidação nos meses seguintes conforme o engajamento aumenta.</div></div>
+    </div>
+    <div class="faq-cta reveal">
+      <h3>AINDA TEM DÚVIDAS?</h3>
+      <p>Fale diretamente com um especialista. Respondemos rapidamente e sem compromisso.</p>
+      <a href="https://wa.me/5577998226795?text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20os%20servi%C3%A7os." class="btn-primary">Tirar dúvida no WhatsApp →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ANÁLISE GRATUITA -->
+<section id="analise">
+  <div class="section-tag">Oferta especial</div>
+  <h2 class="section-title reveal">ANÁLISE GRATUITA DO<br>SEU PERFIL NO GOOGLE</h2>
+  <div class="analise-layout">
+    <div class="analise-text reveal">
+      <p class="section-sub">Descubra como seu negócio está posicionado no Google e o que pode ser melhorado para atrair mais clientes em LEM. Nossa análise é 100% gratuita e sem compromisso.</p>
+      <div class="analise-benefits">
+        <div class="analise-benefit"><span class="analise-check">✓</span>Análise completa do seu perfil no Google</div>
+        <div class="analise-benefit"><span class="analise-check">✓</span>Diagnóstico de visibilidade local em LEM</div>
+        <div class="analise-benefit"><span class="analise-check">✓</span>Identificação de oportunidades de melhoria</div>
+        <div class="analise-benefit"><span class="analise-check">✓</span>Relatório personalizado para o seu negócio</div>
+        <div class="analise-benefit"><span class="analise-check">✓</span>100% gratuito e sem compromisso</div>
+      </div>
+    </div>
+    <div class="analise-form reveal">
+      <h3>QUERO MINHA ANÁLISE</h3>
+      <p>Preencha os dados e entraremos em contato em até 24h.</p>
+      <div class="form-row">
+        <div class="form-group"><label>Nome completo</label><input type="text" id="an-nome" placeholder="Seu nome"></div>
+        <div class="form-group"><label>WhatsApp</label><input type="tel" id="an-whatsapp" placeholder="(77) 99999-9999"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Nome da empresa</label><input type="text" id="an-negocio" placeholder="Sua empresa"></div>
+        <div class="form-group"><label>Cidade</label><input type="text" id="an-cidade" placeholder="Luís Eduardo Magalhães"></div>
+      </div>
+      <div class="form-group"><label>Link do perfil no Google (opcional)</label><input type="text" id="an-link" placeholder="maps.google.com/..."></div>
+      <button class="btn-primary" style="width:100%;justify-content:center;margin-top:8px;" onclick="enviarAnalise()">Quero minha análise grátis →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ORÇAMENTO -->
+<section id="orcamento">
+  <div class="section-tag">Solicite um orçamento</div>
+  <h2 class="section-title reveal">VAMOS CONVERSAR<br>SOBRE SEU NEGÓCIO?</h2>
+  <p class="section-sub reveal" style="margin-bottom:60px;">Preencha os dados abaixo e entraremos em contato em até 24h com uma proposta personalizada.</p>
+  <div style="max-width:720px;margin:0 auto;">
+    <div class="analise-form reveal" style="background:var(--bg3);">
+      <h3>SOLICITAR ORÇAMENTO</h3>
+      <p>Preencha os campos e receba uma proposta personalizada.</p>
+      <div class="form-row">
+        <div class="form-group"><label>Nome completo</label><input type="text" id="or-nome" placeholder="Seu nome"></div>
+        <div class="form-group"><label>WhatsApp</label><input type="tel" id="or-whatsapp" placeholder="(77) 99999-9999"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Nome da empresa</label><input type="text" id="or-negocio" placeholder="Sua empresa"></div>
+        <div class="form-group"><label>Cidade</label><input type="text" id="or-cidade" placeholder="Luís Eduardo Magalhães"></div>
+      </div>
+      <div class="form-group"><label>Serviço de interesse</label>
+        <select id="or-servico">
+          <option value="">Selecione um serviço...</option>
+          <option>Criação de Perfil no Google</option>
+          <option>Otimização de Perfil Google</option>
+          <option>SEO Local para LEM</option>
+          <option>Tour Virtual 360°</option>
+          <option>Criação de Sites Otimizados</option>
+          <option>Gestão de Reputação e Avaliações</option>
+          <option>Cartão de Visitas Digital</option>
+          <option>Monitoramento e Relatórios</option>
+          <option>Mais de um serviço</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Como nos encontrou?</label>
+        <select id="or-como">
+          <option value="">Selecione...</option>
+          <option>Google</option>
+          <option>Indicação de amigo</option>
+          <option>Instagram</option>
+          <option>Facebook</option>
+          <option>Outro</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Mensagem / detalhes adicionais</label><textarea id="or-mensagem" placeholder="Conte mais sobre o que você precisa..."></textarea></div>
+      <button class="btn-primary" style="width:100%;justify-content:center;margin-top:8px;" onclick="enviarOrcamento()">Solicitar Orçamento →</button>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <div class="section-tag">Fale Conosco</div>
+  <h2 class="section-title reveal">ENTRE EM CONTATO</h2>
+  <div class="contact-layout">
+    <div class="contact-img reveal"><img src="4.jpg" alt="Atendimento Capela Serviço Digital"></div>
+    <div class="contact-info">
+      <div class="contact-block reveal"><h3>Endereço</h3><p>Av. Juscelino Kubitscheck, 1548 - Centro,<br>Luís Eduardo Magalhães - BA</p></div>
+      <div class="contact-block reveal"><h3>Telefone / WhatsApp</h3><a href="tel:+5577998226795">(77) 99822-6795</a>
+        <a href="https://wa.me/5577998226795" class="whatsapp-btn" target="_blank">Chamar no WhatsApp</a>
+      </div>
+      <div class="contact-block reveal"><h3>E-mail</h3><a href="mailto:francis@capelaservicodigital.com.br">francis@capelaservicodigital.com.br</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="Logo_Capela_Branco.png" alt="Logo" style="height:36px;width:36px;object-fit:contain;">
+      <div class="nav-logo-text">
+        <span class="logo-capela">CAPELA</span>
+        <span class="logo-sub">SERVIÇO DIGITAL</span>
+      </div>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/capelaservicodigital" target="_blank" title="Facebook">
+        <img src="facebook.png" alt="Facebook" style="width:48px; height:48px;">
+        
+      </a>
+     
+      <a href="https://www.instagram.com/capelaservicodigital" target="_blank" title="Instagram">
+        <img src="instagram.png" alt="Instagram" style="width:48px; height:48px;">
+        
+      </a>
+      
+    </div>
+  </div>
+  <div class="footer-copy">© 2026 — Capela Serviço Digital — Agência de SEO Local em Luís Eduardo Magalhães - BA. Todos os direitos reservados.</div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 80); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+    navLinks.forEach(a => { a.classList.remove('active'); if (a.getAttribute('href') === '#' + current) a.classList.add('active'); });
+  });
+
+  function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+  navLinks.forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
+
+  function toggleFaq(el) {
+    const answer = el.nextElementSibling;
+    const isOpen = el.classList.contains('open');
+    document.querySelectorAll('.faq-question').forEach(q => { q.classList.remove('open'); q.nextElementSibling.classList.remove('open'); });
+    if (!isOpen) { el.classList.add('open'); answer.classList.add('open'); }
+  }
+
+  function enviarAnalise() {
+    const nome = document.getElementById('an-nome').value;
+    const whatsapp = document.getElementById('an-whatsapp').value;
+    const negocio = document.getElementById('an-negocio').value;
+    const cidade = document.getElementById('an-cidade').value || 'Luís Eduardo Magalhães';
+    const link = document.getElementById('an-link').value;
+    if (!nome || !whatsapp || !negocio) { alert('Por favor, preencha nome, WhatsApp e nome da empresa.'); return; }
+    const texto = `Olá! Gostaria de solicitar uma Análise Gratuita do meu perfil no Google.\n\n*Nome:* ${nome}\n*WhatsApp:* ${whatsapp}\n*Empresa:* ${negocio}\n*Cidade:* ${cidade}${link ? '\n*Link do perfil:* ' + link : ''}`;
+    window.open(`https://wa.me/5577998226795?text=${encodeURIComponent(texto)}`, '_blank');
+  }
+
+  function enviarOrcamento() {
+    const nome = document.getElementById('or-nome').value;
+    const whatsapp = document.getElementById('or-whatsapp').value;
+    const negocio = document.getElementById('or-negocio').value;
+    const cidade = document.getElementById('or-cidade').value || 'Luís Eduardo Magalhães';
+    const servico = document.getElementById('or-servico').value;
+    const como = document.getElementById('or-como').value;
+    const mensagem = document.getElementById('or-mensagem').value;
+    if (!nome || !whatsapp || !negocio) { alert('Por favor, preencha nome, WhatsApp e nome da empresa.'); return; }
+    const texto = `Olá! Gostaria de solicitar um orçamento.\n\n*Nome:* ${nome}\n*WhatsApp:* ${whatsapp}\n*Empresa:* ${negocio}\n*Cidade:* ${cidade}\n*Serviço:* ${servico || 'Não informado'}\n*Como nos encontrou:* ${como || 'Não informado'}${mensagem ? '\n*Mensagem:* ' + mensagem : ''}`;
+    window.open(`https://wa.me/5577998226795?text=${encodeURIComponent(texto)}`, '_blank');
+  }
+</script>
+</body>
+</html>
